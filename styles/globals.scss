@@ -1,4 +1,4 @@
-@import "./scss/variables";
+@import "./scss/abstract/variables";
 @import "/node_modules/bootstrap/scss/bootstrap.scss";
 
 html,
@@ -6,6 +6,7 @@ body {
   margin: 0px;
   padding: 0px;
   min-height: 100vh;
+  color: $fontColor;
 }
 *,
 *::before,
@@ -21,4 +22,18 @@ li {
 img {
   max-width: 100%;
   height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  margin: 0px;
 }

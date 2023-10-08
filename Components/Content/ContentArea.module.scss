@@ -1,0 +1,36 @@
+.content {
+  display: block;
+  width: 100%;
+  color: map-get($theme-colors, "secondary");
+
+  h2 {
+    display: inline-block;
+    font-size: 30px;
+    line-height: 1.15;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+    text-transform: uppercase;
+    &.hasBottom {
+      &:after {
+        height: 6px;
+        position: absolute;
+        content: "";
+        width: 60px;
+        display: inline-block;
+        background: url("../../public/images/header-border.webp") no-repeat
+          center;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  p {
+    line-height: 1.5;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,12 @@
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

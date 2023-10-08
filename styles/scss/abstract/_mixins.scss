@@ -1,0 +1,34 @@
+@mixin device-xs {
+  @media all and (min-width: map-get($grid-breakpoints,xs)) {
+    @content;
+  }
+}
+
+@mixin device-sm {
+  @media all and (min-width: map-get($grid-breakpoints,sm)) {
+    @content;
+  }
+}
+
+@mixin device-md {
+  @media all and (min-width: map-get($grid-breakpoints,md)) {
+    @content;
+  }
+}
+
+@mixin device-lg {
+  @media all and (min-width: map-get($grid-breakpoints,lg)) {
+    @content;
+  }
+}
+
+@mixin device-xl {
+  @media all and (min-width: map-get($grid-breakpoints,xl)) {
+    @content;
+  }
+}
+@mixin device-xxl {
+  @media all and (min-width: map-get($grid-breakpoints,xxl)) {
+    @content;
+  }
+}

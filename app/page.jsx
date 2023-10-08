@@ -1,3 +1,11 @@
+import HeroSection from "@/Components/HeroSection/HeroSection";
+import ServicesSection from "@/Components/ServicesSection/ServicesSection";
+
 export default function Home() {
-  return <button className="btn btn-info">Deneme</button>;
+  return (
+    <>
+      <HeroSection />
+      <ServicesSection />
+    </>
+  );
 }

@@ -6,7 +6,7 @@ const nextConfig = {
       path.join(__dirname, "Components"),
       path.join(__dirname, "app"),
     ],
-    additionalData: `@import "@/styles/scss/variables.scss"; @import "@/styles/scss/mixins.scss";`,
+    additionalData: `@import "@/styles/scss/abstract/variables.scss"; @import "@/styles/scss/abstract/mixins.scss";@import "@/styles/scss/base/animations.scss";`,
   },
 };
 

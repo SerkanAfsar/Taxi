@@ -1,0 +1,36 @@
+.headerUp {
+  display: block;
+  padding: 20px 0px;
+  background: map-get($theme-colors, "white");
+  &.sticky {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    animation: fadeInAnimation 0.5s ease-in-out;
+    box-shadow: $header-box-shadow;
+    z-index: 10;
+  }
+  @include device-lg {
+    padding: 13px 0px;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &__right {
+    &,
+    & > a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100%;
+      font-size: 13px;
+      font-weight: 600;
+      color: $fontColor;
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.headerDown {
+  width: 100%;
+  background: map-get($theme-colors, "secondary");
+  color: #fff;
+
+  nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    ul {
+      display: flex;
+      margin: 0px;
+      padding: 0px;
+
+      &,
+      li {
+        list-style: none;
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          color: #fff;
+          font-size: 14px;
+          font-weight: 600;
+          padding: 10px 20px;
+          text-transform: uppercase;
+          transition: all 0.3s ease-in-out;
+          svg {
+            margin-top: -3px;
+            font-size: 18px;
+          }
+          &:hover {
+            color: map-get($theme-colors, "primary");
+          }
+        }
+      }
+    }
+  }
+}

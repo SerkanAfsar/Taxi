@@ -1,8 +1,6 @@
-import Header from "@/Components/Header";
+import Header from "@/Components/Header/Header";
+import { QuickSandFont } from "@/Utils/Fonts";
 import "@/styles/globals.scss";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -11,8 +9,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="tr">
+      <body className={QuickSandFont.className}>
         <Header />
         <main>{children}</main>
       </body>
