@@ -1,3 +1,4 @@
+import Footer from "@/Components/Footer/Footer";
 import Header from "@/Components/Header/Header";
 import { QuickSandFont } from "@/Utils/Fonts";
 import "@/styles/globals.scss";
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
       <body className={QuickSandFont.className}>
         <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

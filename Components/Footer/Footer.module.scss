@@ -1,0 +1,26 @@
+.footer {
+  background: map-get($theme-colors, "secondary");
+  display: block;
+  width: 100%;
+  padding: 30px 0px 0px;
+  position: relative;
+  margin-top: 200px;
+
+  &__shape {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    top: 1px;
+    transform: translateY(-100%);
+    display: block;
+    color: map-get($theme-colors, "secondary");
+    svg {
+      fill: currentColor;
+      position: relative;
+      display: block;
+      width: calc(161% + 1.3px);
+    }
+  }
+}

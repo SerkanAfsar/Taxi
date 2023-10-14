@@ -1,0 +1,17 @@
+.footerBottom {
+  padding: 10px 0px;
+  text-align: center;
+
+  color: #fff;
+  background: map-get($theme-colors, "dark");
+  @include device-lg {
+    justify-content: flex-end;
+  }
+  a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    color: inherit;
+  }
+}

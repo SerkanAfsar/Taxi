@@ -1,0 +1,55 @@
+.footerNav {
+  display: block;
+  width: 100%;
+  padding: 30px 0px;
+  color: #fff;
+  margin-top: -60px;
+
+  h4 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+    &:after {
+      content: "";
+      width: 60%;
+      height: 2px;
+      border-radius: 10px;
+      background: #fff;
+      position: absolute;
+      left: 0px;
+      bottom: -5px;
+    }
+  }
+  p {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 30px;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    flex-wrap: wrap;
+    li {
+      display: block;
+      flex: 0 0 100%;
+      margin-bottom: 10px;
+      @include device-md {
+        flex: 0 0 33%;
+      }
+      @include device-lg {
+        flex: 0 0 25%;
+      }
+      a {
+        color: #fff;
+        display: block;
+        font-weight: 600;
+        text-align: left;
+      }
+    }
+  }
+}
