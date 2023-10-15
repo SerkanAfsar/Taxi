@@ -5,7 +5,7 @@
     padding: 100px 0px;
   }
   background: map-get($theme-colors, "primary")
-    url(../../public/images/taxi-stripe.webp) no-repeat top center;
+    url(../../public/images/taxi-stripe.webp) repeat-x top center;
   &__left {
     flex-basis: 100%;
     display: flex;
@@ -24,7 +24,9 @@
     display: flex;
     justify-content: center;
     margin-top: 30px;
+    display: none;
     @include device-lg {
+      display: flex;
       margin-top: 0px;
       flex-basis: 60%;
       justify-content: center;

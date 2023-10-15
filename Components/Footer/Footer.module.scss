@@ -20,7 +20,11 @@
       fill: currentColor;
       position: relative;
       display: block;
-      width: calc(161% + 1.3px);
+      width: calc(220% + 1.3px);
+      height: 150px;
+      @include device-md {
+        width: calc(161% + 1.3px);
+      }
     }
   }
 }

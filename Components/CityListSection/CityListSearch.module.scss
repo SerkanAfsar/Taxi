@@ -1,17 +1,16 @@
 .content {
   display: flex;
-
   width: 100%;
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: $baseMargin * 4;
   &__searchText {
     position: relative;
     display: flex;
     align-items: center;
     flex: 1 1 auto;
-    margin: 0px 15px;
+    margin: 0px $baseMargin;
     max-width: 400px;
     width: 100%;
 

@@ -17,6 +17,11 @@ $searchBgColor: #f5f5f4;
 $fontColor: #3b3b3b;
 $infoBgColor: #fefbf0;
 
+$baseTransition: all 0.4s ease-in;
+
+$baseMargin: 10px;
+$basePadding: 10px;
+
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
