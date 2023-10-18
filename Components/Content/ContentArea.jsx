@@ -12,7 +12,13 @@ export default function ContentArea({
         {infoText?.title}
       </h2>
       {infoText && <p>{infoText?.content}</p>}
-      {btnInfo && <Button text={btnInfo.text} type={btnInfo.type} />}
+      {btnInfo && (
+        <Button
+          text={btnInfo.text}
+          url="/taksi-duraklari"
+          type={btnInfo.type}
+        />
+      )}
     </div>
   );
 }

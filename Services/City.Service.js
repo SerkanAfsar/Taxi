@@ -1,4 +1,8 @@
 import BaseService from ".";
-export default async function GetCityListService() {
+export async function GetCityListService() {
   return BaseService({ apiUrl: `getCity` });
+}
+
+export async function GetCityDetail({ citySlug }) {
+  return BaseService({ apiUrl: `?city=${citySlug}` });
 }

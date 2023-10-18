@@ -9,6 +9,11 @@ import { useEffect, useRef, useState } from "react";
 
 export default function HeaderUp() {
   const [isSticky, setIsSticky] = useState(false);
+  const itemList = [
+    { title: "İstanbul Duraklari", url: "/taksi-duraklari/istanbul" },
+    { title: "Ankara Duraklari", url: "/taksi-duraklari/ankara" },
+    { title: "İzmir Duraklari", url: "/taksi-duraklari/izmir" },
+  ];
   const ref = useRef();
   useEffect(() => {
     if (ref && ref.current) {
@@ -44,9 +49,9 @@ export default function HeaderUp() {
           </div>
           <div className={`d-none d-lg-block col-lg-6 `}>
             <div className={styles.headerUp__right}>
-              <InfoItem title="İstanbul Durakları" />
-              <InfoItem title="Ankara Durakları" />
-              <InfoItem title="İzmir Durakları" />
+              {itemList?.map((item, index) => (
+                <InfoItem item={item} key={index} />
+              ))}
             </div>
           </div>
         </div>

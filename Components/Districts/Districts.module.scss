@@ -1,0 +1,29 @@
+.distictList {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+  li {
+    &,
+    & > a {
+      width: 100%;
+      display: block;
+      color: #000;
+      font-size: 16px;
+      font-weight: 700;
+      &.active {
+        border-radius: 5px;
+        background: blue;
+        color: #fff;
+      }
+    }
+    & > a {
+      padding: 10px;
+    }
+  }
+}

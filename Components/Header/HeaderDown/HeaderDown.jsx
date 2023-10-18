@@ -18,26 +18,26 @@ export default function HeaderDown() {
                   </Link>
                 </li>
                 <li>
-                  <Link href={"/"}>
+                  <Link href={"/taksi-duraklari/istanbul"}>
                     <AiFillCar />
                     <span>İstanbul Taksi Durakları</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href={"/"}>
+                  <Link href={"/taksi-duraklari/ankara"}>
                     <AiFillCar />
                     <span>Ankara Taksi Durakları</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href={"/"}>
+                  <Link href={"/taksi-duraklari/izmir"}>
                     <AiFillCar />
                     <span>İzmir Taksi Durakları</span>
                   </Link>
                 </li>
               </ul>
               <div className="ms-auto">
-                <Button text="Tüm İller" />
+                <Button text="Tüm İller" url="/taksi-duraklari" />
               </div>
             </nav>
           </div>
