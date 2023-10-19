@@ -1,13 +1,12 @@
-import Districts from "@/Components/Districts/Disticts";
-import { GetCityDetailService } from "./page";
 import CityDetail from "@/Components/CityDetail/CityDetail";
+import { GetCityDetail } from "@/Services/City.Service";
 
 export default async function Layout({ params, children }) {
   const { slug } = params;
   if (!slug) {
     return <>{children}</>;
   } else {
-    const data = await GetCityDetailService({ citySlug: slug[0] });
+    const { data } = await GetCityDetail({ citySlug: slug[0] });
     const districtData = Array.from(
       new Set(data?.map((item, index) => item.ilce))
     );

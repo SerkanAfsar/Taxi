@@ -1,6 +1,6 @@
-import styles from "./CityListSearch.module.scss";
+import styles from "./Search.module.scss";
 import { BiMap } from "react-icons/bi";
-export default function CityListSearch({ searchText, setSearchText }) {
+export default function Search({ searchText, setSearchText }) {
   return (
     <div className={styles.content}>
       <div className={styles.content__searchText}>

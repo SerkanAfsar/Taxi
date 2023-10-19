@@ -1,8 +1,6 @@
-import CityListContainer from "@/Components/CityListSection/CityListContainer";
-import CityListSection from "@/Components/CityListSection/CityListSection";
+import CityListContainer from "@/Containers/CityListContainer";
 import HeroSection from "@/Components/HeroSection/HeroSection";
 import ServicesSection from "@/Components/ServicesSection/ServicesSection";
-import GetCityListService from "@/Services/City.Service";
 
 export default async function Home() {
   return (
@@ -13,3 +11,5 @@ export default async function Home() {
     </>
   );
 }
+
+export const revalidate = 6000;

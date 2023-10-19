@@ -1,14 +1,14 @@
 "use client";
-import styles from "./CityListSection.module.scss";
+import styles from "./CityListWrapper.module.scss";
 import { useState } from "react";
 import CityList from "./CityList";
-import CityListSearch from "./CityListSearch";
-export default function CityListSection({ data }) {
+import Search from "./Search";
+export default function CityListWrapper({ data }) {
   const [searchText, setSearchText] = useState(null);
   return (
     <section className={styles.cityListSection}>
       <div className="container">
-        <CityListSearch searchText={searchText} setSearchText={setSearchText} />
+        <Search searchText={searchText} setSearchText={setSearchText} />
         <CityList searchText={searchText} data={data} />
       </div>
     </section>

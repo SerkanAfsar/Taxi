@@ -1,5 +1,5 @@
 import BaseService from ".";
-export async function GetCityListService() {
+export async function GetCityList() {
   return BaseService({ apiUrl: `getCity` });
 }
 
