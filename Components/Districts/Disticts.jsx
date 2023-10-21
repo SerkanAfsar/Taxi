@@ -8,6 +8,17 @@ export default function Districts({ districtData, citySlug, cityName }) {
 
   return (
     <ul className={styles.distictList}>
+      <li>
+        <Link
+          href={`/taksi-duraklari/${citySlug}`}
+          title={`${cityName} Taksi Durakları`}
+          className={
+            slug.length == 1 ? `${styles.distictList} ${styles.active}` : ""
+          }
+        >
+          Bütün İlçeler
+        </Link>
+      </li>
       {districtData?.map((item, index) => (
         <li key={index}>
           <Link

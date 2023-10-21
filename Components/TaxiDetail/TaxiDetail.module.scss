@@ -4,15 +4,36 @@
   background: #fff;
   padding: 10px;
   display: flex;
-  flex-direction: column;
-  align-self: flex-start;
-  justify-content: flex-start;
-  height: 100%;
   color: #000;
   min-height: 100px;
   font-size: 14px;
-  flex: 1 1 100px;
-  h4 {
-    font-size: 15px;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    color: #000;
+    border-radius: 100%;
+    padding: 10px;
+    flex: 0 0 auto;
+    border: 2px solid map-get($theme-colors, "primary");
+    margin-right: 10px;
+  }
+
+  &__detail {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    h4 {
+      font-weight: 700;
+      font-size: 15px;
+    }
+    span {
+      font-weight: 500;
+    }
+    a {
+      font-size: 17px;
+      color: #000;
+    }
   }
 }

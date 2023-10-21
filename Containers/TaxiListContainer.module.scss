@@ -1,9 +1,12 @@
 .taxiListContainer {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 10px;
-  align-items: center;
+  gap: 15px;
+
   @include device-md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include device-lg {
     grid-template-columns: repeat(3, 1fr);
   }
 }
