@@ -152,7 +152,7 @@ export const dynamic = "force-static";
 
 export async function generateStaticParams() {
   const { data, status, message } = await GetCityList();
-  console.log(message);
+
   const arr = [];
   if (status == "success") {
     for (let i = 0; i < data.length; i++) {
