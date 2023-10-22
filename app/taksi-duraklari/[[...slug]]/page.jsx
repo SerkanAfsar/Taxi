@@ -150,21 +150,24 @@ export default async function Page({ params }) {
 export const revalidate = 6000;
 
 export async function generateStaticParams() {
-  const { data } = await GetCityList();
+  const { data, status, message } = await GetCityList();
+  console.log(message);
   const arr = [];
-
-  for (let i = 0; i < data.length; i++) {
-    arr.push({ slug: [`${data[i].SehirSlug}`] });
-    const { data: distictData } = await GetCityDetail({
-      citySlug: data[i].SehirSlug,
-    });
-    Array.from(new Set(distictData?.map((item) => item.ilce))).forEach(
-      (item) => {
-        arr.push({
-          slug: [`${data[i].SehirSlug}`, `${slugUrl(item)}`],
-        });
-      }
-    );
+  if (status == "success") {
+    for (let i = 0; i < data.length; i++) {
+      arr.push({ slug: [`${data[i].SehirSlug}`] });
+      const { data: distictData } = await GetCityDetail({
+        citySlug: data[i].SehirSlug,
+      });
+      Array.from(new Set(distictData?.map((item) => item.ilce)))?.forEach(
+        (item) => {
+          arr.push({
+            slug: [`${data[i].SehirSlug}`, `${slugUrl(item)}`],
+          });
+        }
+      );
+    }
   }
+
   return arr;
 }
