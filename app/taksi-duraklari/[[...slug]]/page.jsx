@@ -148,6 +148,7 @@ export default async function Page({ params }) {
 }
 
 export const revalidate = 6000;
+export const dynamic = "force-static";
 
 export async function generateStaticParams() {
   const { data, status, message } = await GetCityList();
