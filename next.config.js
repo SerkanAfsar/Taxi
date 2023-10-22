@@ -1,6 +1,5 @@
 const path = require("path");
 const nextConfig = {
-  staticPageGenerationTimeout: 1000,
   sassOptions: {
     includePaths: [
       path.join(__dirname, "styles"),
