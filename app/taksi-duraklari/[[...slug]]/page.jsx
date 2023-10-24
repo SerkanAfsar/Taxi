@@ -122,9 +122,11 @@ export default async function Page({ params }) {
   if (!slug) {
     return (
       <>
-        <h1>Türkiye İl İlçe Taksi Durakları Listesş</h1>
-        <h2>Taksi Durakları</h2>
-        <h3>Türkiye Taksi Durakları</h3>
+        <h1 style={{ display: "none" }}>
+          Türkiye İl İlçe Taksi Durakları Listesi
+        </h1>
+        <h2 style={{ display: "none" }}>Taksi Durakları</h2>
+        <h3 style={{ display: "none" }}>Türkiye Taksi Durakları</h3>
         <CityListContainer />
       </>
     );
