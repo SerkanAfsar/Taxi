@@ -7,6 +7,7 @@ export const metadata = {
   description: "Türkiye İl - İlçe Taksi Durakları Listesi",
   charSet: "UTF-8",
   robots: "index,follow",
+  authors: [{ name: "Taksi Duraklari" }],
   publisher: "Taksi Surakları",
   author: "Taksi Durakları - info@taksi-duraklari.net",
   distribution: "global",
@@ -37,6 +38,9 @@ export const metadata = {
 export default async function Home() {
   return (
     <>
+      <h1 style={{ display: "none" }}>
+        Türkiye İl | ilçe Taksi Durakları Listesi
+      </h1>
       <HeroSection />
       <ServicesSection />
       <CityListContainer />

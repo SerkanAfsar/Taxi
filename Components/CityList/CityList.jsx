@@ -17,6 +17,7 @@ export default function CityList({ data, searchText }) {
       <div className={styles.cityList__grid}>
         {result?.map((item, index) => (
           <Link
+            title={`${item.SehirAd} Taksi Durakları`}
             href={`/taksi-duraklari/${item.SehirSlug}`}
             className={styles.cityList__city}
             key={index}

@@ -6,11 +6,11 @@ import Image from "next/image";
 export default function Logo() {
   return (
     <div className="d-none d-lg-block">
-      <h1 className={`${styles.logo}`}>
+      <div className={`${styles.logo}`}>
         <Link href="/" title="Taksi Durakları">
           <Image src={image} width={117} height={32} alt="Taksi Durakları" />
         </Link>
-      </h1>
+      </div>
     </div>
   );
 }

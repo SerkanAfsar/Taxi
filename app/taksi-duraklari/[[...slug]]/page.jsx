@@ -56,6 +56,7 @@ export async function generateMetadata({ params }, parent) {
       distribution: "global",
       themeColor: "#fff",
       resourceType: "Web Page",
+      authors: [{ name: "Taksi Duraklari" }],
       openGraph: {
         title: `${data[0]?.Sehir} Taksi Durakları`,
         description: `${data[0]?.Sehir} Taksi Durakları`,
@@ -90,6 +91,7 @@ export async function generateMetadata({ params }, parent) {
       distribution: "global",
       themeColor: "#fff",
       resourceType: "Web Page",
+      authors: [{ name: "Taksi Duraklari" }],
       openGraph: {
         title: `${item?.Sehir} ${item?.ilce} Taksi Durakları`,
         description: `${item?.Sehir} ${item?.ilce} Taksi Durakları`,
@@ -118,7 +120,14 @@ export default async function Page({ params }) {
   const { slug } = params;
 
   if (!slug) {
-    return <CityListContainer />;
+    return (
+      <>
+        <h1>Türkiye İl İlçe Taksi Durakları Listesş</h1>
+        <h2>Taksi Durakları</h2>
+        <h3>Türkiye Taksi Durakları</h3>
+        <CityListContainer />
+      </>
+    );
   }
 
   const {
@@ -136,13 +145,35 @@ export default async function Page({ params }) {
     notFound();
   }
   if (slug && slug.length == 1) {
-    return <TaxiListContainer data={data} />;
+    console.log(data[0]);
+    return (
+      <>
+        <h1
+          style={{ display: "none" }}
+        >{`${data[0].Sehir} Taksi Durakları Listesi`}</h1>
+        <h2
+          style={{ display: "none" }}
+        >{`${data[0].Sehir} Taksi Durakları`}</h2>
+        <h3 style={{ display: "none" }}>{`${data[0].Sehir} Taksi`}</h3>
+        <TaxiListContainer data={data} />
+      </>
+    );
   }
   if (slug && slug.length == 2) {
+    const ilceData = data.filter((a) => slugUrl(a.ilce) == slug[1]);
     return (
-      <TaxiListContainer
-        data={data.filter((a) => slugUrl(a.ilce) == slug[1])}
-      />
+      <>
+        <h1
+          style={{ display: "none" }}
+        >{`${ilceData[0].Sehir} ${ilceData[0].ilce} Taksi Durakları Listesi`}</h1>
+        <h2
+          style={{ display: "none" }}
+        >{`${ilceData[0].Sehir} ${ilceData[0].ilce} Taksi Durakları`}</h2>
+        <h3
+          style={{ display: "none" }}
+        >{`${ilceData[0].Sehir} ${ilceData[0].ilce} Taksi`}</h3>
+        <TaxiListContainer data={ilceData} />
+      </>
     );
   }
 }
