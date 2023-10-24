@@ -34,7 +34,7 @@ export async function generateMetadata({ params }, parent) {
       },
       resourceType: "Web Page",
       alternates: {
-        canonical: `${process.env.SITE_NAME}`,
+        canonical: `${process.env.NEXT_PUBLIC_SITE_NAME}/taksi-duraklari`,
         dnsPrefetch: "//fonts.googleapis.com/",
         dnsPrefetch: "//www.google-analytics.com/",
         dnsPrefetch: "//ajax.googleapis.com/",
@@ -72,7 +72,7 @@ export async function generateMetadata({ params }, parent) {
       },
       resourceType: "Web Page",
       alternates: {
-        canonical: `${process.env.SITE_NAME}/taksi-duraklari/${slug[0]}`,
+        canonical: `${process.env.NEXT_PUBLIC_SITE_NAME}/taksi-duraklari/${slug[0]}`,
         dnsPrefetch: "//fonts.googleapis.com/",
         dnsPrefetch: "//www.google-analytics.com/",
         dnsPrefetch: "//ajax.googleapis.com/",
@@ -107,7 +107,7 @@ export async function generateMetadata({ params }, parent) {
       },
       resourceType: "Web Page",
       alternates: {
-        canonical: `${process.env.SITE_NAME}/taksi-duraklari/${slug[0]}/${slug[1]}`,
+        canonical: `${process.env.NEXT_PUBLIC_SITE_NAME}/taksi-duraklari/${slug[0]}/${slug[1]}`,
         dnsPrefetch: "//fonts.googleapis.com/",
         dnsPrefetch: "//www.google-analytics.com/",
         dnsPrefetch: "//ajax.googleapis.com/",

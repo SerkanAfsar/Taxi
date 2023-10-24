@@ -28,7 +28,7 @@ export const metadata = {
   },
   resourceType: "Web Page",
   alternates: {
-    canonical: `${process.env.SITE_NAME}`,
+    canonical: `${process.env.NEXT_PUBLIC_SITE_NAME}`,
     dnsPrefetch: "//fonts.googleapis.com/",
     dnsPrefetch: "//www.google-analytics.com/",
     dnsPrefetch: "//ajax.googleapis.com/",
