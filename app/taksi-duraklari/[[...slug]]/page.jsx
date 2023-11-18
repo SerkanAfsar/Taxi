@@ -47,8 +47,8 @@ export async function generateMetadata({ params }, parent) {
 
   if (slug.length == 1) {
     return {
-      title: `${data[0]?.Sehir} Taksi Durakları`,
-      description: `${data[0]?.Sehir} Taksi Durakları`,
+      title: `${data?.sehirAd} Taksi Durakları`,
+      description: `${data?.sehirAd} Taksi Durakları`,
       charSet: "UTF-8",
       robots: "index,follow",
       publisher: "Taksi Durakları",
@@ -58,16 +58,16 @@ export async function generateMetadata({ params }, parent) {
       resourceType: "Web Page",
       authors: [{ name: "Taksi Duraklari" }],
       openGraph: {
-        title: `${data[0]?.Sehir} Taksi Durakları`,
-        description: `${data[0]?.Sehir} Taksi Durakları`,
+        title: `${data?.sehirAd} Taksi Durakları`,
+        description: `${data?.sehirAd} Taksi Durakları`,
         publisher: "Taksi Durakları",
         locale: "tr_TR",
         site_name: "Taksi Durakları",
       },
       twitter: {
         card: "summary",
-        description: `${data[0]?.Sehir} Taksi Durakları`,
-        title: `${data[0]?.Sehir} Taksi Durakları`,
+        description: `${data?.sehirAd} Taksi Durakları`,
+        title: `${data?.sehirAd} Taksi Durakları`,
         creator: "@taksiduraklari",
       },
       resourceType: "Web Page",
@@ -80,10 +80,10 @@ export async function generateMetadata({ params }, parent) {
     };
   }
   if (slug.length == 2) {
-    const item = data.filter((a) => slugUrl(a.ilce) == slug[1])[0];
+    const item = data?.taxies?.filter((a) => slugUrl(a.ilce) == slug[1])[0];
     return {
-      title: `${item?.Sehir} ${item?.ilce} Taksi Durakları`,
-      description: `${item?.Sehir} ${item?.ilce} Taksi Durakları`,
+      title: `${item?.sehir} ${item?.ilce} Taksi Durakları`,
+      description: `${item?.sehir} ${item?.ilce} Taksi Durakları`,
       charSet: "UTF-8",
       robots: "index,follow",
       publisher: "Taksi Durakları",
@@ -93,16 +93,16 @@ export async function generateMetadata({ params }, parent) {
       resourceType: "Web Page",
       authors: [{ name: "Taksi Duraklari" }],
       openGraph: {
-        title: `${item?.Sehir} ${item?.ilce} Taksi Durakları`,
-        description: `${item?.Sehir} ${item?.ilce} Taksi Durakları`,
+        title: `${item?.sehir} ${item?.ilce} Taksi Durakları`,
+        description: `${item?.sehir} ${item?.ilce} Taksi Durakları`,
         publisher: "Taksi Durakları",
         locale: "tr_TR",
         site_name: "Taksi Durakları",
       },
       twitter: {
         card: "summary",
-        description: `${item?.Sehir} ${item?.ilce} Taksi Durakları`,
-        title: `${item?.Sehir} ${item?.ilce} Taksi Durakları`,
+        description: `${item?.sehir} ${item?.ilce} Taksi Durakları`,
+        title: `${item?.sehir} ${item?.ilce} Taksi Durakları`,
         creator: "@taksiduraklari",
       },
       resourceType: "Web Page",
@@ -133,47 +133,44 @@ export default async function Page({ params }) {
   }
 
   const {
-    status,
-    message = null,
+    success = false,
+    errorList = [],
     data = [],
   } = await GetCityDetail({
     citySlug: slug[0],
   });
 
-  if (status != "success") {
-    throw new Error(message || "Error Has Accured");
+  if (!success) {
+    throw new Error(errorList || "Error Has Accured");
   }
   if (data.length == 0) {
     notFound();
   }
   if (slug && slug.length == 1) {
-    console.log(data[0]);
     return (
       <>
         <h1
           style={{ display: "none" }}
-        >{`${data[0].Sehir} Taksi Durakları Listesi`}</h1>
-        <h2
-          style={{ display: "none" }}
-        >{`${data[0].Sehir} Taksi Durakları`}</h2>
-        <h3 style={{ display: "none" }}>{`${data[0].Sehir} Taksi`}</h3>
-        <TaxiListContainer data={data} />
+        >{`${data.sehirAd} Taksi Durakları Listesi`}</h1>
+        <h2 style={{ display: "none" }}>{`${data.sehirAd} Taksi Durakları`}</h2>
+        <h3 style={{ display: "none" }}>{`${data.sehirAd} Taksi`}</h3>
+        <TaxiListContainer data={data.taxies} />
       </>
     );
   }
   if (slug && slug.length == 2) {
-    const ilceData = data.filter((a) => slugUrl(a.ilce) == slug[1]);
+    const ilceData = data?.taxies?.filter((a) => slugUrl(a.ilce) == slug[1]);
     return (
       <>
         <h1
           style={{ display: "none" }}
-        >{`${ilceData[0].Sehir} ${ilceData[0].ilce} Taksi Durakları Listesi`}</h1>
+        >{`${ilceData[0].sehir} ${ilceData[0].ilce} Taksi Durakları Listesi`}</h1>
         <h2
           style={{ display: "none" }}
-        >{`${ilceData[0].Sehir} ${ilceData[0].ilce} Taksi Durakları`}</h2>
+        >{`${ilceData[0].sehir} ${ilceData[0].ilce} Taksi Durakları`}</h2>
         <h3
           style={{ display: "none" }}
-        >{`${ilceData[0].Sehir} ${ilceData[0].ilce} Taksi`}</h3>
+        >{`${ilceData[0].sehir} ${ilceData[0].ilce} Taksi`}</h3>
         <TaxiListContainer data={ilceData} />
       </>
     );
@@ -187,20 +184,18 @@ export async function generateStaticParams() {
   const { data, status, message } = await GetCityList();
 
   const arr = [];
-  if (status == "success") {
-    for (let i = 0; i < data.length; i++) {
-      arr.push({ slug: [`${data[i].SehirSlug}`] });
-      const { data: distictData } = await GetCityDetail({
-        citySlug: data[i].SehirSlug,
-      });
-      Array.from(new Set(distictData?.map((item) => item.ilce)))?.forEach(
-        (item) => {
-          arr.push({
-            slug: [`${data[i].SehirSlug}`, `${slugUrl(item)}`],
-          });
-        }
-      );
-    }
+  for (let i = 0; i < data.length; i++) {
+    arr.push({ slug: [`${data[i].sehirSlug}`] });
+    const { data: distictData } = await GetCityDetail({
+      citySlug: data[i].sehirSlug,
+    });
+    Array.from(new Set(distictData?.taxies?.map((item) => item.ilce)))?.forEach(
+      (item) => {
+        arr.push({
+          slug: [`${data[i].sehirSlug}`, `${slugUrl(item)}`],
+        });
+      }
+    );
   }
 
   return arr;

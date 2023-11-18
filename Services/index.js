@@ -1,3 +1,5 @@
+import { getResponse } from "@/Utils";
+
 export default async function BaseService({ apiUrl }) {
   try {
     const response = await fetch(
@@ -6,17 +8,14 @@ export default async function BaseService({ apiUrl }) {
         method: "GET",
         headers: {
           "Content-Type": "application/json; charset=utf-8",
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
+          ClientId: `${process.env.NEXT_PUBLIC_CLIENT_ID}`,
+          ClientSecret: `${process.env.NEXT_PUBLIC_CLIENT_SECRET}`,
         },
       },
       { cache: "no-cache" }
     );
-    const result = await response.json();
-    return result;
+    return getResponse(await response.json());
   } catch (err) {
-    return {
-      success: "failure",
-      message: err.message,
-    };
+    return getResponse(err);
   }
 }

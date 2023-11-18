@@ -7,14 +7,15 @@ export default async function Layout({ params, children }) {
     return <>{children}</>;
   } else {
     const { data } = await GetCityDetail({ citySlug: slug[0] });
+
     const districtData = Array.from(
-      new Set(data?.map((item, index) => item.ilce))
+      new Set(data?.taxies?.map((item, index) => item.ilce))
     );
     return (
       <CityDetail
         item={{
           citySlug: slug[0],
-          cityName: data[0]?.Sehir,
+          cityName: data[0]?.sehirAd,
           districtData: districtData,
         }}
       >

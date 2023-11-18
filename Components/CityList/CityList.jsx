@@ -7,7 +7,7 @@ export default function CityList({ data, searchText }) {
   const result = useMemo(() => {
     return searchText
       ? data.filter((a) =>
-          a.SehirAd.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())
+          a.sehirAd.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())
         )
       : data;
   }, [searchText, data]);
@@ -17,12 +17,12 @@ export default function CityList({ data, searchText }) {
       <div className={styles.cityList__grid}>
         {result?.map((item, index) => (
           <Link
-            title={`${item.SehirAd} Taksi Durakları`}
-            href={`/taksi-duraklari/${item.SehirSlug}`}
+            title={`${item.sehirAd} Taksi Durakları`}
+            href={`/taksi-duraklari/${item.sehirSlug}`}
             className={styles.cityList__city}
             key={index}
           >
-            {item.SehirAd} Taksi Durakları
+            {item.sehirAd} Taksi Durakları
           </Link>
         ))}
       </div>
