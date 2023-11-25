@@ -1,12 +1,15 @@
 import styles from "./MenuButton.module.scss";
-export default function MenuButton() {
+import { forwardRef, useImperativeHandle } from "react";
+const MenuButton = forwardRef((props, ref) => {
   return (
     <div className="d-block ms-auto d-lg-none">
-      <div className={styles.menuBtn}>
+      <div ref={ref} className={styles.menuBtn}>
         <span></span>
         <span></span>
         <span></span>
       </div>
     </div>
   );
-}
+});
+MenuButton.displayName = "MenuButton";
+export default MenuButton;

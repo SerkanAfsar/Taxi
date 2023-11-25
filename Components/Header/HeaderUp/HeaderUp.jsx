@@ -6,15 +6,20 @@ import InfoItem from "./InfoItem";
 import MenuButton from "./MenuButton";
 import LogoMobile from "../Logo/LogoMobile";
 import { useEffect, useRef, useState } from "react";
+import MobileMenu from "./MobileMenu";
 
 export default function HeaderUp() {
   const [isSticky, setIsSticky] = useState(false);
+  const [isMobileActive, setIsMobileActive] = useState(false);
   const itemList = [
     { title: "İstanbul Duraklari", url: "/taksi-duraklari/istanbul" },
     { title: "Ankara Duraklari", url: "/taksi-duraklari/ankara" },
     { title: "İzmir Duraklari", url: "/taksi-duraklari/izmir" },
   ];
   const ref = useRef();
+  const menuBtnRef = useRef();
+  const mobileMenuRef = useRef();
+
   useEffect(() => {
     if (ref && ref.current) {
       const handler = (e) => {
@@ -30,6 +35,22 @@ export default function HeaderUp() {
       };
     }
   }, [ref]);
+
+  useEffect(() => {
+    if (menuBtnRef && menuBtnRef.current) {
+      menuBtnRef.current.addEventListener(
+        "click",
+        mobileMenuRef.current.handleChangeActive
+      );
+      return () => {
+        menuBtnRef.current.removeEventListener(
+          "click",
+          mobileMenuRef.current.handleChangeActive
+        );
+      };
+    }
+  }, [menuBtnRef]);
+
   return (
     <div
       className={
@@ -44,7 +65,8 @@ export default function HeaderUp() {
               <Logo />
               <LogoMobile />
               <SearchBox />
-              <MenuButton />
+              <MenuButton ref={menuBtnRef} />
+              <MobileMenu ref={mobileMenuRef} itemList={itemList} />
             </div>
           </div>
           <div className={`d-none d-lg-block col-lg-6 `}>
