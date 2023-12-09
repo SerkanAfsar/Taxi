@@ -10,8 +10,9 @@ export async function generateMetadata({ params }, parent) {
 
   if (!slug) {
     return {
-      title: "Türkiye İl - İlçe Taksi Durakları Listesi",
-      description: "Türkiye İl - İlçe Taksi Durakları Listesi",
+      title: "Türkiye İl - İlçe Taksi Durakları Listesi | Taksi Numaraları",
+      description:
+        "Türkiye İl - İlçe Taksi Durakları Listesi | Taksi Numaraları",
       charSet: "UTF-8",
       robots: "index,follow",
       publisher: "Taksi Surakları",
@@ -47,8 +48,8 @@ export async function generateMetadata({ params }, parent) {
 
   if (slug.length == 1) {
     return {
-      title: `${data?.sehirAd} Taksi Durakları`,
-      description: `${data?.sehirAd} Taksi Durakları`,
+      title: `${data?.sehirAd} Taksi Durakları | ${data?.sehirAd} Taksi Numaraları `,
+      description: `${data?.sehirAd} Taksi Durakları ${data?.sehirAd} Taksi Numaraları`,
       charSet: "UTF-8",
       robots: "index,follow",
       publisher: "Taksi Durakları",
@@ -82,8 +83,8 @@ export async function generateMetadata({ params }, parent) {
   if (slug.length == 2) {
     const item = data?.taxies?.filter((a) => slugUrl(a.ilce) == slug[1])[0];
     return {
-      title: `${item?.sehir} ${item?.ilce} Taksi Durakları`,
-      description: `${item?.sehir} ${item?.ilce} Taksi Durakları`,
+      title: `${item?.sehir} ${item?.ilce} Taksi Durakları | ${item?.sehir} ${item?.ilce} Taksi Numaraları`,
+      description: `${item?.sehir} ${item?.ilce} Taksi Durakları | ${item?.sehir} ${item?.ilce} Taksi Numaraları`,
       charSet: "UTF-8",
       robots: "index,follow",
       publisher: "Taksi Durakları",
@@ -123,7 +124,7 @@ export default async function Page({ params }) {
     return (
       <>
         <h1 style={{ display: "none" }}>
-          Türkiye İl İlçe Taksi Durakları Listesi
+          Türkiye İl İlçe Taksi Durakları Listesi | Taksi Numaraları
         </h1>
         <h2 style={{ display: "none" }}>Taksi Durakları</h2>
         <h3 style={{ display: "none" }}>Türkiye Taksi Durakları</h3>
@@ -152,7 +153,10 @@ export default async function Page({ params }) {
         <h1
           style={{ display: "none" }}
         >{`${data.sehirAd} Taksi Durakları Listesi`}</h1>
-        <h2 style={{ display: "none" }}>{`${data.sehirAd} Taksi Durakları`}</h2>
+        <h2 style={{ display: "none" }}>
+          {`${data.sehirAd} Taksi Durakları`} |{" "}
+          {`${data.sehirAd} Taksi Numaraları`}{" "}
+        </h2>
         <h3 style={{ display: "none" }}>{`${data.sehirAd} Taksi`}</h3>
         <TaxiListContainer data={data.taxies} />
       </>
@@ -162,9 +166,10 @@ export default async function Page({ params }) {
     const ilceData = data?.taxies?.filter((a) => slugUrl(a.ilce) == slug[1]);
     return (
       <>
-        <h1
-          style={{ display: "none" }}
-        >{`${ilceData[0].sehir} ${ilceData[0].ilce} Taksi Durakları Listesi`}</h1>
+        <h1 style={{ display: "none" }}>
+          {`${ilceData[0].sehir} ${ilceData[0].ilce} Taksi Durakları Listesi`} |{" "}
+          {`${ilceData[0].sehir} ${ilceData[0].ilce} Taksi Numaraları`}
+        </h1>
         <h2
           style={{ display: "none" }}
         >{`${ilceData[0].sehir} ${ilceData[0].ilce} Taksi Durakları`}</h2>
