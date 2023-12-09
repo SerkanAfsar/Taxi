@@ -182,7 +182,7 @@ export default async function Page({ params }) {
   }
 }
 
-export const revalidate = 6000;
+export const revalidate = 10;
 export const dynamic = "force-static";
 
 export async function generateStaticParams() {
