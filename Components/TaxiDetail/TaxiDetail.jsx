@@ -8,7 +8,7 @@ export default function TaxiDetail({ item }) {
         <h4>{item.durakAd}</h4>
         <b>{item.ilce}</b>
         <span>{item.durakAdres}</span>
-        <a href={`tel:${item?.durakTel}`}>{item.durakTel}</a>
+        {item.durakTel && <a href={`tel:${item?.durakTel}`}>{item.durakTel}</a>}
       </div>
     </div>
   );
