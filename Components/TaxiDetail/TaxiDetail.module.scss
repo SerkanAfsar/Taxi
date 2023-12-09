@@ -35,6 +35,11 @@
       font-size: 17px;
       color: #000;
       text-decoration: underline;
+      &::before {
+        content: "Tel : ";
+        padding-right: 10px;
+        display: inline-block;
+      }
     }
   }
 }
