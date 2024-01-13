@@ -8,6 +8,7 @@ export default function CityListWrapper({ data }) {
   return (
     <section className={styles.cityListSection}>
       <div className="container">
+        <h3 className="d-block text-center mb-4">İllere Göre Arama Listesi</h3>
         <Search searchText={searchText} setSearchText={setSearchText} />
         <CityList searchText={searchText} data={data} />
       </div>

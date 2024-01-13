@@ -8,9 +8,9 @@ export default function FooterNav() {
           <div className="col-12 col-lg-3">
             <h4>Hakkımızda</h4>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus
-              quidem eum minima eveniet ipsa corrupti, amet suscipit
-              voluptatibus quod totam!
+              Taksi Durakları sitesi sizlere Türkiye il ve ilçelerine göre arama
+              listesi sunar. Telefon ve adres detaylarına bakarak taksi
+              listelerine ulaşabilirsiniz. İyi günler dileriz.
             </p>
           </div>
           <div className="col-12 col-lg-9">
