@@ -1,6 +1,7 @@
 import Footer from "@/Components/Footer/Footer";
 import Header from "@/Components/Header/Header";
 import { QuickSandFont } from "@/Utils/Fonts";
+import { Analytics } from "@vercel/analytics/react";
 import "@/styles/globals.scss";
 
 export const metadata = {
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
         <Header />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
