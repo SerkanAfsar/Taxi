@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.taksi-duraklari.com
+
+# Sitemaps
+Sitemap: https://www.taksi-duraklari.com/sitemap.xml

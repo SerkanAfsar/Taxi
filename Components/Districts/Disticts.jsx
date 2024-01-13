@@ -3,8 +3,20 @@ import { slugUrl } from "@/Utils/Helpers";
 import styles from "./Districts.module.scss";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import { useEffect } from "react";
+
 export default function Districts({ districtData, citySlug, cityName }) {
   const { slug } = useParams();
+
+  useEffect(() => {
+    const taxiList = document.querySelector("#taxiList");
+    if (taxiList) {
+      window.scrollTo({
+        top: taxiList.offsetTop - 100,
+        behavior: "smooth",
+      });
+    }
+  }, [slug]);
 
   return (
     <ul className={styles.distictList}>

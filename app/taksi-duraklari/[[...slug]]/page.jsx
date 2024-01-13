@@ -144,8 +144,8 @@ export default async function Page({ params }) {
   if (!success) {
     throw new Error(errorList || "Error Has Accured");
   }
-  if (data.length == 0) {
-    notFound();
+  if (data.length == 0 || !data) {
+    return notFound();
   }
   if (slug && slug.length == 1) {
     return (
@@ -164,10 +164,13 @@ export default async function Page({ params }) {
   }
   if (slug && slug.length == 2) {
     const ilceData = data?.taxies?.filter((a) => slugUrl(a.ilce) == slug[1]);
+    if (!ilceData[0]) {
+      return notFound();
+    }
     return (
       <>
         <h1 style={{ display: "none" }}>
-          {`${ilceData[0].sehir} ${ilceData[0].ilce} Taksi Durakları Listesi`} |{" "}
+          {`${ilceData[0].sehir} ${ilceData[0].ilce} Taksi Durakları Listesi`} |
           {`${ilceData[0].sehir} ${ilceData[0].ilce} Taksi Numaraları`}
         </h1>
         <h2
