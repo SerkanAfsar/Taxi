@@ -182,6 +182,8 @@ export default async function Page({ params }) {
         <TaxiListContainer data={ilceData} />
       </>
     );
+  } else if (slug && slug.length > 2) {
+    return notFound();
   }
 }
 
