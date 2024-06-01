@@ -1,5 +1,5 @@
 import Image from "next/image";
-import image from "../../../public/images/logo-icon.webp";
+import image from "../../../public/images/taksi.webp";
 import styles from "./LogoMobile.module.scss";
 export default function LogoMobile() {
   return (
