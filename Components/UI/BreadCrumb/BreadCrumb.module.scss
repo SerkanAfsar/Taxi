@@ -1,12 +1,15 @@
 .wrapper {
   display: block;
   width: 100%;
-  font-size: 16px;
+  font-size: 14px;
   margin-bottom: 20px;
+  @include device-md {
+    font-size: 16px;
+  }
   ul {
     list-style: none;
     display: block;
-    margin: 0px;
+    margin-left: 10px;
     padding: 0px;
     li {
       display: inline-block;

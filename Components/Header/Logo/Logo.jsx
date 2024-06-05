@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Logo() {
   return (
-    <div className="d-none d-lg-block">
+    <div className="d-none d-md-block">
       <div className={`${styles.logo}`}>
         <Link href="/" title="Taksi Durakları">
           <Image src={image} width={117} height={60} alt="Taksi Durakları" />
