@@ -1,8 +1,17 @@
 import Districts from "../Districts/Disticts";
 import TaxiDetail from "../TaxiDetail/TaxiDetail";
-export default function CityDetail({ item, children }) {
+import BreadCrumb from "../UI/BreadCrumb/BreadCrumb";
+export default function CityDetail({ breadCrumbArr, item, children }) {
   return (
     <div className="container my-3">
+      <div className="row">
+        <div className="col-12">
+          {/* {breadCrumbArr?.map((item, index) => (
+            <div key={index}>{item.name}</div>
+          ))} */}
+          <BreadCrumb arr={breadCrumbArr} />
+        </div>
+      </div>
       <div className="row">
         <div className="col-12 col-md-3 col-lg-2 mb-4 mb-xl-0">
           <Districts

@@ -1,0 +1,41 @@
+.wrapper {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 20px;
+  ul {
+    list-style: none;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    li {
+      display: inline-block;
+      margin-right: 5px;
+      &:last-child {
+        a {
+          &:after {
+            display: none;
+          }
+        }
+      }
+
+      a {
+        position: relative;
+        display: inline-block;
+        color: #000;
+        font-weight: 700;
+        padding-right: 15px;
+        &::after {
+          position: absolute;
+          right: 0px;
+          font-weight: bold;
+
+          top: 50%;
+          content: ">";
+
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
