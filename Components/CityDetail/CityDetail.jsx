@@ -1,6 +1,7 @@
 "use client";
 import Districts from "../Districts/Disticts";
 import BreadCrumb from "../UI/BreadCrumb/BreadCrumb";
+import { usePathname } from "next/navigation";
 import {
   EmailShareButton,
   EmailIcon,
@@ -18,6 +19,8 @@ import {
   FacebookIcon,
 } from "react-share";
 export default function CityDetail({ breadCrumbArr, item, children }) {
+  const pathName = usePathname();
+  const fullPathName = `https://www.taksi-duraklari.com${pathName}`;
   return (
     <div className="container my-3">
       <div className="row mb-3">
@@ -25,25 +28,25 @@ export default function CityDetail({ breadCrumbArr, item, children }) {
           <BreadCrumb arr={breadCrumbArr} />
         </div>
         <div className="col-12 col-lg-4 d-inline-flex  flex-wrap gap-2 justify-content-center justify-content-lg-end align-items-center">
-          <FacebookShareButton url={window.location.href}>
+          <FacebookShareButton url={fullPathName}>
             <FacebookIcon size={32} round={true} />
           </FacebookShareButton>
-          <EmailShareButton url={window.location.href}>
+          <EmailShareButton url={fullPathName}>
             <EmailIcon size={32} round={true} />
           </EmailShareButton>
-          <LinkedinShareButton url={window.location.href}>
+          <LinkedinShareButton url={fullPathName}>
             <LinkedinIcon size={32} round={true} />
           </LinkedinShareButton>
-          <WhatsappShareButton url={window.location.href}>
+          <WhatsappShareButton url={fullPathName}>
             <WhatsappIcon size={32} round={true} />
           </WhatsappShareButton>
-          <TwitterShareButton url={window.location.href}>
+          <TwitterShareButton url={fullPathName}>
             <TwitterIcon size={32} round={true} />
           </TwitterShareButton>
-          <PinterestShareButton url={window.location.href}>
+          <PinterestShareButton url={fullPathName}>
             <PinterestIcon size={32} round={true} />
           </PinterestShareButton>
-          <TelegramShareButton url={window.location.href}>
+          <TelegramShareButton url={fullPathName}>
             <TelegramIcon size={32} round={true} />
           </TelegramShareButton>
         </div>
