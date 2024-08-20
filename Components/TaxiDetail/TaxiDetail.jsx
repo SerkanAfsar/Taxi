@@ -1,6 +1,7 @@
 import styles from "./TaxiDetail.module.scss";
 import { AiFillCar } from "react-icons/ai";
 export default function TaxiDetail({ item }) {
+  console.log(item);
   return (
     <div className={styles.taxiDetail}>
       <AiFillCar />
