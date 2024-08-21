@@ -3,6 +3,7 @@ import Header from "@/Components/Header/Header";
 import { QuickSandFont } from "@/Utils/Fonts";
 import { Analytics } from "@vercel/analytics/react";
 import "@/styles/globals.scss";
+import Arrow from "@/Components/Footer/Arrow";
 
 export const metadata = {
   title: "Create Next App",
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <Footer />
         <Analytics />
+        <Arrow />
       </body>
     </html>
   );
