@@ -2,7 +2,7 @@
   box-shadow: 0px 0px 4px rgba($color: #000000, $alpha: 0.4);
   border-radius: 5px;
   background: #fff;
-  padding: 10px;
+  padding: 16px;
   display: flex;
   color: #000;
   min-height: 100px;
@@ -23,7 +23,7 @@
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     h4 {
       font-weight: 700;
       font-size: 15px;
@@ -32,14 +32,27 @@
       font-weight: 500;
     }
     a {
-      font-size: 17px;
+      font-size: 16px;
       color: #000;
       text-decoration: underline;
+      margin-bottom: 10px;
       &::before {
-        content: "Tel : ";
+        content: "Telefon (Ara) : ";
         padding-right: 10px;
         display: inline-block;
       }
+    }
+    button {
+      border: none;
+      border-radius: 10px;
+      padding: 5px;
+      background: map-get($theme-colors, "primary");
+      color: #000;
+      font-size: 14px;
+      font-weight: bold;
+      margin-top: auto;
+      outline: none;
+      border: 2px solid map-get($theme-colors, "secondary");
     }
   }
 }

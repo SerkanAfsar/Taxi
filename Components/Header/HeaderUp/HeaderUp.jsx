@@ -38,15 +38,15 @@ export default function HeaderUp() {
 
   useEffect(() => {
     if (menuBtnRef && menuBtnRef.current) {
-      menuBtnRef.current.addEventListener(
-        "click",
-        mobileMenuRef.current.handleChangeActive
-      );
+      const item = mobileMenuRef.current;
+      menuBtnRef.current.addEventListener("click", item.handleChangeActive);
       return () => {
-        menuBtnRef.current.removeEventListener(
-          "click",
-          mobileMenuRef.current.handleChangeActive
-        );
+        if (menuBtnRef.current) {
+          menuBtnRef.current.removeEventListener(
+            "click",
+            item.handleChangeActive
+          );
+        }
       };
     }
   }, [menuBtnRef]);

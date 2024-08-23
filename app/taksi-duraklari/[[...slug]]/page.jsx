@@ -127,6 +127,9 @@ export default async function Page({ params }) {
           Türkiye İl İlçe Taksi Durakları Listesi | Taksi Numaraları
         </h1>
         <h2 style={{ display: "none" }}>Taksi Durakları</h2>
+        <h2 style={{ display: "none" }}>
+          En yakın taksi durakları | En yakın taksi durağı
+        </h2>
         <h3 style={{ display: "none" }}>Türkiye Taksi Durakları</h3>
         <CityListContainer />
       </>
@@ -157,7 +160,13 @@ export default async function Page({ params }) {
           {`${data.sehirAd} Taksi Durakları`} |{" "}
           {`${data.sehirAd} Taksi Numaraları`}{" "}
         </h2>
+        <h3
+          style={{ display: "none" }}
+        >{`${data.sehirAd} En yakın taksi durağı`}</h3>
         <h3 style={{ display: "none" }}>{`${data.sehirAd} Taksi`}</h3>
+        <h3
+          style={{ display: "none" }}
+        >{`${data.sehirAd} En yakın taksi durakları`}</h3>
         <TaxiListContainer data={data.taxies} />
       </>
     );
@@ -176,9 +185,15 @@ export default async function Page({ params }) {
         <h2
           style={{ display: "none" }}
         >{`${ilceData[0].sehir} ${ilceData[0].ilce} Taksi Durakları`}</h2>
+        <h2
+          style={{ display: "none" }}
+        >{`${ilceData[0].sehir} ${ilceData[0].ilce} En yakın taksi durakları`}</h2>
         <h3
           style={{ display: "none" }}
         >{`${ilceData[0].sehir} ${ilceData[0].ilce} Taksi`}</h3>
+        <h3
+          style={{ display: "none" }}
+        >{`${ilceData[0].sehir} ${ilceData[0].ilce} En yakın taksi durağı`}</h3>
         <TaxiListContainer data={ilceData} />
       </>
     );

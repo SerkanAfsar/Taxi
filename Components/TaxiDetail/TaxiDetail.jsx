@@ -1,6 +1,6 @@
 import styles from "./TaxiDetail.module.scss";
 import { AiFillCar } from "react-icons/ai";
-export default function TaxiDetail({ item }) {
+export default function TaxiDetail({ item, handleMapClick }) {
   return (
     <div className={styles.taxiDetail}>
       <AiFillCar />
@@ -9,6 +9,11 @@ export default function TaxiDetail({ item }) {
         <b>{item.ilce}</b>
         <span>{item.durakAdres}</span>
         {item.durakTel && <a href={`tel:${item?.durakTel}`}>{item.durakTel}</a>}
+        {item.latitude && item.longitude && (
+          <button type="button" onClick={(e) => handleMapClick(item)}>
+            Haritada Görüntüle
+          </button>
+        )}
       </div>
     </div>
   );

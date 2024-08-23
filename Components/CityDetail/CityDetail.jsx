@@ -28,6 +28,7 @@ export default function CityDetail({ breadCrumbArr, item, children }) {
           <BreadCrumb arr={breadCrumbArr} />
         </div>
         <div className="col-12 col-lg-4 d-inline-flex  flex-wrap gap-2 justify-content-center justify-content-lg-end align-items-center">
+          <b>Paylaş:</b>
           <FacebookShareButton url={fullPathName}>
             <FacebookIcon size={32} round={true} />
           </FacebookShareButton>

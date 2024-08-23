@@ -51,7 +51,11 @@ const MobileMenu = forwardRef((props, ref) => {
       <ul>
         <li>
           <b>Taksi Durakları</b>
-          <IoMdCloseCircleOutline size={25} onClick={handleChangeActive} />
+          <IoMdCloseCircleOutline
+            role="button"
+            size={25}
+            onClick={handleChangeActive}
+          />
         </li>
         <li>
           <Link
