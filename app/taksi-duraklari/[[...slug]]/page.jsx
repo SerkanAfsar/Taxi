@@ -48,8 +48,8 @@ export async function generateMetadata({ params }, parent) {
 
   if (slug.length == 1) {
     return {
-      title: `${data?.sehirAd} Taksi Durakları | ${data?.sehirAd} Taksi Numaraları `,
-      description: `${data?.sehirAd} Taksi Durakları ${data?.sehirAd} Taksi Numaraları`,
+      title: `${data?.sehirAd} Taksi Durakları | ${data?.sehirAd} Taksi Numaraları |${data.sehirAd} En Yakın Taksi Durakları `,
+      description: `${data?.sehirAd} Taksi Durakları ${data?.sehirAd} Taksi Numaraları | ${data.sehirAd} En Yakın Taksi Durakları`,
       charSet: "UTF-8",
       robots: "index,follow",
       publisher: "Taksi Durakları",
@@ -83,8 +83,8 @@ export async function generateMetadata({ params }, parent) {
   if (slug.length == 2) {
     const item = data?.taxies?.filter((a) => slugUrl(a.ilce) == slug[1])[0];
     return {
-      title: `${item?.sehir} ${item?.ilce} Taksi Durakları | ${item?.sehir} ${item?.ilce} Taksi Numaraları`,
-      description: `${item?.sehir} ${item?.ilce} Taksi Durakları | ${item?.sehir} ${item?.ilce} Taksi Numaraları`,
+      title: `${item?.sehir} ${item?.ilce} Taksi Durakları | ${item?.sehir} ${item?.ilce} Taksi Numaraları | ${item?.sehir} ${item?.ilce} En Yakın Taksi Durakları`,
+      description: `${item?.sehir} ${item?.ilce} Taksi Durakları | ${item?.sehir} ${item?.ilce} Taksi Numaraları | ${item?.sehir} ${item?.ilce} En Yakın Taksi Durakları`,
       charSet: "UTF-8",
       robots: "index,follow",
       publisher: "Taksi Durakları",

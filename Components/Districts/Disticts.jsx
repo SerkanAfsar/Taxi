@@ -12,7 +12,7 @@ export default function Districts({ districtData, citySlug, cityName }) {
     const taxiList = document.querySelector("#taxiList");
     if (taxiList) {
       window.scrollTo({
-        top: taxiList.offsetTop - 100,
+        top: taxiList.offsetTop - 200,
         behavior: "smooth",
       });
     }
